@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* keep your own styles below, without @apply for Tailwind utilities */
+:root {
+  --bg-start: #0a2540;
+  --bg-end: #04324a;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  /* antialiasing without @apply */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* color instead of @apply text-white */
+  color: #fff;
+
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+}
+
+/* .glass without @apply */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem; /* ~ rounded-2xl */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* RTL helper (we toggle html dir dynamically) */
+[dir="rtl"] .rtl\:text-right {
+  text-align: right;
+}
+[dir="rtl"] .rtl\:flex-row-reverse {
+  flex-direction: row-reverse;
+}
